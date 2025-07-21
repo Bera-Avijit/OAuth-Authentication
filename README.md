@@ -9,6 +9,18 @@ A full-stack web application featuring secure **OAuth2 authentication** with **G
 - 🌐 Secure CORS + Cookie-based session handling
 
 ---
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login Page](Screenshots/login-page.png)
+
+## 📊 Dashboard
+### Google
+![Dashboard](Screenshots/dashboard-google.png)
+### GitHub
+![Dashboard](Screenshots/dashboard-github.png)
+
+---
 
 ## 🚀 Features
 
@@ -22,5 +34,5 @@ A full-stack web application featuring secure **OAuth2 authentication** with **G
 
 ---
 
-## 📁 ScreenShots
+
 
