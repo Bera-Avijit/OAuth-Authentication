@@ -2,6 +2,7 @@ import { useAuth } from "../Context/AuthContext";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
+  console.log("User info:", user);
 
   const renderUserInfo = () => {
     if (user?.provider === "google") {
@@ -11,8 +12,12 @@ const Dashboard = () => {
             {user?.picture && (
               <img
                 className="profile-picture"
-                src={user?.picture}
+                src={user.picture}
                 alt="Profile"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/default-avatar.jpg"; // Fallback image
+                }}
               />
             )}
             <div className="basic-user-info">
@@ -42,7 +47,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="github-status">
+          <div className="github-stats">
             <div className="stat-card">
               <h4>Public repos</h4>
               <p>{user?.publicrepos || 0}</p>
@@ -61,17 +66,17 @@ const Dashboard = () => {
             <div className="additional-info">
               {user?.bio && (
                 <div className="item-info">
-                  <Strong>Bio: </Strong> {user?.bio}
+                  <strong>Bio: </strong> {user?.bio}
                 </div>
               )}
               {user?.company && (
                 <div className="item-info">
-                  <Strong>Company: </Strong> {user?.company}
+                  <strong>Company: </strong> {user?.company}
                 </div>
               )}
               {user?.location && (
                 <div className="item-info">
-                  <Strong>Location: </Strong> {user?.location}
+                  <strong>Location: </strong> {user?.location}
                 </div>
               )}
             </div>
