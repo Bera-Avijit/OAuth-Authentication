@@ -53,12 +53,12 @@ public class AuthController {
     }
 
     private String getProviderName(Authentication authentication) {
-        if(authentication instanceof OAuth2User){
-            OAuth2AuthenticationToken authToken = (OAuth2AuthenticationToken) authentication;
+        if (authentication instanceof OAuth2AuthenticationToken authToken) {
             return authToken.getAuthorizedClientRegistrationId();
         }
         return null;
     }
+
 
     @PostMapping("/logout")
     public Map<String, String> logout() {

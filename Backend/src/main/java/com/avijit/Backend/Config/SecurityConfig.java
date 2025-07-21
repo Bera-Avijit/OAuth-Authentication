@@ -21,7 +21,7 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    @Value("${app.cors.allowed-origins}")
+    @Value("${auth.cors.allowed-origins}")
     private String allowedOrigins;
 
     @Bean
@@ -34,7 +34,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated())
                 .oauth2Login(
                         oauth -> oauth
-                                .defaultSuccessUrl("http://localhost:5173/dashboard")
+                                .defaultSuccessUrl("http://localhost:5173/dashboard", true)
                                 .failureUrl("http://localhost:5173/login?error=true")
                                 .userInfoEndpoint(
                                         userInfo -> userInfo

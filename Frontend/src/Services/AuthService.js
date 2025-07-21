@@ -10,7 +10,7 @@ const api = axios.create({
 export const AuthService = {
   getCurrentUser: async () => {
     try {
-      const response = api.get("/api/auth/current-user");
+      const response = await api.get("/api/auth/current-user");
       return response.data;
     } catch (error) {
       console.error("Error fetching current user:", error);

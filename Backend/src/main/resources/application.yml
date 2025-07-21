@@ -1,6 +1,14 @@
-app:
+auth:
   cors:
     allowed-origins: "http://localhost:5173"
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        same-site: None      # ✅ Needed for cross-site cookie usage
+        secure: true         # ✅ Must be true for SameSite=None
+        http-only: true      # ✅ Prevent access from JS
 spring:
   security:
     oauth2:
