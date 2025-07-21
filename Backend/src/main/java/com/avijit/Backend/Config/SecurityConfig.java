@@ -34,7 +34,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated())
                 .oauth2Login(
                         oauth -> oauth
-                                .defaultSuccessUrl("http://localhost:3000/dashboard")
+                                .defaultSuccessUrl("http://localhost:5173/dashboard")
                                 .failureUrl("http://localhost:5173/login?error=true")
                                 .userInfoEndpoint(
                                         userInfo -> userInfo
